@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Slider Control</title>
+
+    <!-- Bootstrap -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/myCss.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .nav-justified > li {
+        display: table-cell;
+        width: 1%;
+      }
+      .nav-justified > li > a {
+        margin-bottom: 0;
+      }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified"  id="myTab">
+            <li class="active"><a data-toggle="tab" href="#Auto">Auto</a></li>
+            <li><a data-toggle="tab" href="#Manual">Manual</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="Auto" class="tab-pane fade in active">
+            <div class="ShutInt topMargin">
+              <form class="form-group">
+                <label for="shutInt">Shutter Interval</label>
+                <input type="text" class="form-control" id="txtShutInt" placeholder="5">
+            </div>
+            <div class="Direction topMargin">
+              <label class=" radio control-label">Direction</label>
+              <label class="radio-inline">
+                <input type="radio" name="Direction2" id="dirRightAuto" value="Right">Right
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="Direction2" id="dirLeftAuto" value="Left" checked="checked">Left
+              </label>
+            </div>
+            <div class="span12 topMargin">
+              <button id="mode1" name="mode1" value="mode1" type="button" class="btn btn-lg btn-primary mode-btn">9min</button>
+              <button id="mode2" name="mode2" value="mode2" type="button" class="btn btn-lg btn-primary mode-btn">17min20</button>
+              <button id="mode3" name="mode3" value="mode3" type="button" class="btn btn-lg btn-primary mode-btn">30min</button>
+            </div>
+            <div class="span12 topMargin">
+              <button id="stop" name="stop" value="stop" type="button" class="btn btn-lg btn-danger">STOP</button>
+            </div>
+          </div>
+          <div id="Manual" class="tab-pane fade">
+            <div class="speed topMargin">
+            <form class="form-group">
+              <label for="Speed">Speed</label>
+              <input type="text" class="form-control" id="txtSpeed" placeholder="0.01">
+            </div>
+            <div class="Direction">
+              <label class=" radio control-label">Direction</label>
+              <label class="radio-inline">
+                <input type="radio" name="Direction" id="dirRight" value="Right">Right
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="Direction" id="dirLeft" value="Left" checked="checked">Left
+              </label>
+            </div>
+            <div class="Steps topMargin">
+              <form class="form-group">
+                <label for="steps">steps</label>
+                <input type="text" class="form-control" id="txtSteps" placeholder="1000">
+            </div>
+            <div class="span12 topMargin">
+              <button id="start" name="start" value="start" type="button" class="btn btn-lg btn-success" data-text-start="Start" data-text-stop="Stop">Start</button>
+            </div>
+            <div class="span12 topMargin">
+              <button id="shutter" name="shutter" value="shutter" type="button" class="btn btn-lg btn-success">Shutter</button>
+            </div>
+            <div class="span12 topMargin">
+              <button id="shutdown" name="shutdown" value="shutdown" type="button" class="btn btn-lg">Shut down RaPi</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="/javascripts/jquery-1.12.3.js"></script> -->
+    <script src="/javascripts/jquery-2.2.3.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/socket/socket.io.js"></script>
+  <!--  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script> -->
+    <script src="/javascripts/myJs.js"></script>
+  </body>
+</html>
